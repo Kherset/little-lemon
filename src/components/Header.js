@@ -1,9 +1,11 @@
-import logo from "../img/little-lemon.png";
+import logo from "../img/little-lemon-header.png";
+import Nav from "./Nav";
 
 function Header() {
   return (
-    <header>
-      <img src={logo} alt="Logo little Lemon" />
+    <header className="header">
+      <img src={logo} alt="Logo little Lemon" className="header-logo" />
+      <Nav />
     </header>
   );
 }

@@ -1,9 +1,9 @@
-import logo from "../img/little-lemon-footer.png";
+import logo from "../img/little-lemon-logo-green.png";
 
 function Footer() {
   return (
     <footer>
-      <img src={logo} alt="Logo little Lemon" />
+      <img src={logo} alt="Logo little Lemon" className="footer-logo" />
       <div>
         <h3>Important Links</h3>
         <ul>
