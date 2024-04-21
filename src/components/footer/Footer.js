@@ -1,4 +1,6 @@
-import logo from "../img/little-lemon-logo-green.png";
+import logo from "../../img/little-lemon-logo-green.png";
+import { HashLink as Link } from "react-router-hash-link";
+import "./footer.css";
 
 function Footer() {
   return (
@@ -6,25 +8,21 @@ function Footer() {
       <img src={logo} alt="Logo little Lemon" className="footer-logo" />
       <section className="footer-parts">
         <article className="footer-part">
-          <h3 className="footer-title">Important Links</h3>
+          <h3 className="footer-title" id="footer-title">
+            Important Links
+          </h3>
           <ul className="footer-list">
             <li>
-              <a href="/">Home</a>
+              <Link to="/#header-logo">Home</Link>
             </li>
             <li>
-              <a href="/">About</a>
+              <Link to="/#weeks-specials-title">Menu</Link>
             </li>
             <li>
-              <a href="/">Menu</a>
+              <Link to="/reserve-a-table">Reservations</Link>
             </li>
             <li>
-              <a href="/">Reservations</a>
-            </li>
-            <li>
-              <a href="/">Order Online</a>
-            </li>
-            <li>
-              <a href="/">Login</a>
+              <Link to="/#highlight-selections">Order Online</Link>
             </li>
           </ul>
         </article>
@@ -40,13 +38,13 @@ function Footer() {
           <h3 className="footer-title">Social Media Links</h3>
           <ul className="footer-list">
             <li>
-              <a href="/">Facebook</a>
+              <Link to="https://www.facebook.com">Facebook</Link>
             </li>
             <li>
-              <a href="/">Instagram</a>
+              <Link to="https://www.instagram.com">Instagram</Link>
             </li>
             <li>
-              <a href="/">Twitter</a>
+              <Link to="https://www.twitter.com">X</Link>
             </li>
           </ul>
         </article>

@@ -1,0 +1,142 @@
+.nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  margin: 20px 40px;
+  min-width: 350px;
+  width: 350px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 60vw;
+  margin-right: 20px;
+}
+
+.nav-option a {
+  color: var(--little-lemon-green);
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-option a:hover {
+  color: var(--little-lemon-yellow);
+  text-decoration: underline;
+}
+
+.nav-option {
+  transition: transform 0.2s ease;
+}
+
+.nav-option:hover {
+  transform: scale(1.3);
+}
+
+#burger-menu {
+  display: none;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1023px) {
+  .nav-logo {
+    margin: 20px 30px;
+    min-width: 300px;
+    width: 300px;
+  }
+
+  .nav-links {
+    width: 60vw;
+  }
+
+  .nav-option a {
+    font-size: 20px;
+  }
+
+  .nav-option:hover {
+    transform: scale(1.2);
+  }
+}
+
+@media screen and (min-width: 721px) and (max-width: 899px) {
+  .nav-logo {
+    margin: 20px 20px 20px 15px;
+    min-width: 250px;
+    width: 250px;
+  }
+
+  .nav-links {
+    width: 65vw;
+    margin-right: 15px;
+  }
+
+  .nav-option a {
+    font-size: 17px;
+  }
+
+  .nav-option:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .nav-logo {
+    margin: 20px;
+    min-width: 200px;
+    width: 200px;
+  }
+
+  .nav-option a {
+    font-size: 15px;
+  }
+
+  .show-nav {
+    border: solid 1px black;
+    color: var(--little-lemon-green);
+    flex-direction: column;
+    position: fixed;
+    right: 20px;
+    top: 60px;
+    width: 100px;
+  }
+
+  .hide-nav {
+    display: none;
+  }
+
+  .nav-option {
+    background-color: white;
+    padding: 5px;
+    border-bottom: solid 1px black;
+  }
+
+  .nav-option:last-child {
+    border-bottom: none;
+  }
+
+  .nav-option:hover {
+    transform: scale(1.1);
+  }
+
+  #burger-menu,
+  #cross-menu {
+    display: flex;
+    justify-content: end;
+    font-weight: bold;
+    margin-right: 15px;
+  }
+
+  #burger-menu:before,
+  #cross-menu:before {
+    content: "\2630";
+    color: var(--little-lemon-green);
+    font-size: 40px;
+  }
+
+  #cross-menu:before {
+    content: "\2715";
+  }
+}

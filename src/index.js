@@ -1,18 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import App from "./components/pages/Homepage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Homepage from "./components/pages/Home";
-import Reservation from "./components/pages/Reservation";
+import Bookingpage from "./components/pages/Bookingpage";
+import Errorpage from "./components/pages/Errorpage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Homepage />,
+    element: <App />,
   },
   {
     path: "/reserve-a-table",
-    element: <Reservation />,
+    element: <Bookingpage />,
+  },
+  {
+    path: "*",
+    element: <Errorpage />,
   },
 ]);
 

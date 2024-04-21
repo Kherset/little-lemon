@@ -1,13 +1,8 @@
-import { Fragment } from "react";
 import "./App.css";
-import Homepage from "./components/pages/Home.js";
+import Homepage from "./components/pages/Homepage.js";
 
 function App() {
-  return (
-    <Fragment>
-      <Homepage />;
-    </Fragment>
-  );
+  return <Homepage />;
 }
 
 export default App;

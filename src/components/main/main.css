@@ -1,0 +1,59 @@
+.main {
+  height: auto;
+  margin: 180px 0 100px;
+}
+
+.main-header {
+  text-align: center;
+}
+
+.weeks-specials-title {
+  font-size: 50px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.online-menu-button {
+  font-size: 30px;
+  margin-bottom: 50px;
+  padding: 16px 32px;
+  width: 300px;
+}
+
+.highlight-selections {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1023px) {
+  .main {
+    margin: 130px 0 60px;
+  }
+}
+
+@media screen and (min-width: 721px) and (max-width: 899px) {
+  .main {
+    margin: 100px 0 60px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .main {
+    margin: 70px 0 0 0;
+  }
+
+  .weeks-specials-title {
+    font-size: 40px;
+  }
+
+  .online-menu-button {
+    font-size: 30px;
+    margin-bottom: 50px;
+    padding: 8px 16px;
+    width: 230px;
+  }
+  .highlight-selections {
+    align-items: center;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,135 @@
+.header {
+  background-color: var(--little-lemon-green);
+  display: flex;
+  height: 420px;
+  width: 100vw;
+}
+
+.header-presentation {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+}
+
+.header-title {
+  color: #f4ce14;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 50px 100px 10px;
+}
+
+.header-subtitle {
+  color: var(--little-lemon-white);
+  font-size: 30px;
+  margin: 0 0 60px 100px;
+}
+
+.header-text {
+  color: var(--little-lemon-white);
+  font-size: 20px;
+  margin: 0 50px 70px 100px;
+}
+
+.header-button {
+  font-size: 25px;
+  margin-left: 200px;
+  padding: 8px 16px;
+  width: 250px;
+}
+
+.header-container-image {
+  display: flex;
+  width: 40vw;
+}
+
+.header-presentation-image {
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+  height: 450px;
+  margin: 110px auto;
+  width: 330px;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1023px) {
+  .header-presentation-image {
+    height: 400px;
+    width: 280px;
+  }
+}
+
+@media screen and (min-width: 721px) and (max-width: 899px) {
+  .header {
+    height: 330px;
+  }
+
+  .header-title {
+    color: #f4ce14;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 40px 40px 10px;
+  }
+
+  .header-subtitle {
+    font-size: 20px;
+    margin: 0 0 40px 40px;
+  }
+
+  .header-text {
+    color: var(--little-lemon-white);
+    font-size: 18px;
+    margin: 0 40px 50px 40px;
+  }
+
+  .header-button {
+    font-size: 20px;
+    margin-left: 140px;
+    width: 200px;
+  }
+
+  .header-presentation-image {
+    height: 320px;
+    margin: 80px auto;
+    width: 240px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .header {
+    height: 300px;
+  }
+
+  .header-presentation {
+    align-items: center;
+    width: 100vw;
+  }
+
+  .header-title {
+    color: #f4ce14;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 40px 0 10px;
+  }
+
+  .header-subtitle {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .header-text {
+    color: var(--little-lemon-white);
+    font-size: 18px;
+    margin: 30px 0;
+    text-align: center;
+    width: 300px;
+  }
+
+  .header-button {
+    font-size: 18px;
+    margin: 0;
+    width: 180px;
+  }
+
+  .header-container-image {
+    display: none;
+  }
+}
