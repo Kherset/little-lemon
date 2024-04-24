@@ -1,0 +1,15 @@
+.confirmed-booking {
+  align-items: center;
+  background-color: var(--little-lemon-green);
+  color: var(--little-lemon-yellow);
+  display: flex;
+  font-size: 50px;
+  justify-content: center;
+  height: 300px;
+  width: 100vw;
+}
+
+.confirmed-booking::before {
+  content: "\2713";
+  margin-right: 20px;
+}

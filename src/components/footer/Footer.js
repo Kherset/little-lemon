@@ -19,7 +19,7 @@ function Footer() {
               <Link to="/#weeks-specials-title">Menu</Link>
             </li>
             <li>
-              <Link to="/reserve-a-table">Reservations</Link>
+              <Link to="/booking">Reservations</Link>
             </li>
             <li>
               <Link to="/#highlight-selections">Order Online</Link>

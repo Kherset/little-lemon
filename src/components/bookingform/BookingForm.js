@@ -1,11 +1,13 @@
 import React, { Fragment, useState } from "react";
 import "./booking-form.css";
+import inside from "../../img/restaurant-inside.avif";
+import outside from "../../img/restaurant-outside.avif";
 
-function BookingForm() {
-  const [date, setDate] = useState(null);
-  const [hour, setHour] = useState(null);
-  const [guest, setGuest] = useState(null);
-  const [occasion, setOccasion] = useState(null);
+function BookingForm(props) {
+  const [date, setDate] = useState("");
+  const [hour, setHour] = useState("");
+  const [guest, setGuest] = useState("");
+  const [occasion, setOccasion] = useState("");
   const [preference, setPreference] = useState("no preference");
 
   const [errorGuest, setErrorGuest] = useState(false);
@@ -21,28 +23,19 @@ function BookingForm() {
     "You must select a preference.",
   ];
 
-  const [availableTimes] = useState([
-    "Choose time",
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ]);
+  // Prevent the user from selecting a date equal to or earlier than today's date.
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() + 1);
+  const minDate = currentDate.toISOString().split("T")[0];
 
   const handleDate = (e) => {
-    const selectedDate = new Date(e.target.value);
-    const currentDate = new Date();
-    const minDate = new Date(currentDate);
-    minDate.setDate(minDate.getDate());
-
-    if (isNaN(selectedDate.getTime()) || selectedDate < minDate) {
+    if (!e || e < minDate) {
       setErrorDate(true);
       setDate(null);
     } else {
       setErrorDate(false);
-      setDate(selectedDate);
+      setDate(e);
+      props.dispatch(e);
     }
   };
 
@@ -97,20 +90,29 @@ function BookingForm() {
     setErrorOccasion(!occasion);
 
     if (date && hour && guest && occasion && preference) {
-      alert("C'est bon");
+      props.submitForm(e);
     }
   };
 
   return (
     <Fragment>
+      <div className="presentation-images">
+        <h2 className="booking-form-title">Booking Form</h2>
+        <div className="form-img-container">
+          <img src={inside} alt="restaurant indoor"></img>
+          <img src={outside} alt="restaurant outdoor"></img>
+        </div>
+      </div>
       <form className="booking-form">
         <div className="form-option form-option-1">
           <label htmlFor="res-date"> Choose a date </label>
           <input
             type="date"
             id="res-date"
-            onChange={handleDate}
-            onBlur={handleDate}
+            value={date}
+            onChange={(e) => handleDate(e.target.value)}
+            onBlur={(e) => handleDate(e.target.value)}
+            min={minDate}
             className="booking-form-input"
           />
           {errorDate && <p className="error-message">{errorMessages[0]}</p>}
@@ -120,13 +122,14 @@ function BookingForm() {
           <label htmlFor="res-hour"> Choose a time </label>
           <select
             id="res-hour"
+            value={hour}
             onChange={handleHour}
             onBlur={handleHour}
             className="booking-form-input"
           >
-            {availableTimes.map((option, index) => (
-              <option key={`option-${index + 1}`}>{option}</option>
-            ))}
+            {props.availableTimes.availableTimes.map((availableTimes) => {
+              return <option key={availableTimes}>{availableTimes}</option>;
+            })}
           </select>
           {errorHour && <p className="error-message">{errorMessages[1]}</p>}
         </div>
@@ -139,6 +142,7 @@ function BookingForm() {
             min="1"
             max="10"
             id="guests"
+            value={guest}
             onBlur={handleGuest}
             onChange={handleGuest}
             className="booking-form-input"
@@ -147,9 +151,10 @@ function BookingForm() {
         </div>
 
         <div className="form-option form-option-4">
-          <label htmlFor="guests"> Occasion </label>
+          <label htmlFor="occasion"> Occasion </label>
           <select
-            id="guests"
+            id="occasion"
+            value={occasion}
             onChange={handleOccasion}
             onBlur={handleOccasion}
             className="booking-form-input"
@@ -168,7 +173,7 @@ function BookingForm() {
             <input
               type="radio"
               name="location"
-              value="no preference"
+              value={preference}
               checked={preference === "no preference"}
               onChange={handlePreference}
               className="booking-form-input"

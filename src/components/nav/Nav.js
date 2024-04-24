@@ -12,12 +12,14 @@ function Nav() {
 
   return (
     <nav className="nav">
-      <img
-        src={logo}
-        alt="Logo little Lemon"
-        className="nav-logo"
-        id="header-logo"
-      />
+      <Link to="/">
+        <img
+          src={logo}
+          alt="Logo little Lemon"
+          className="nav-logo"
+          id="header-logo"
+        />
+      </Link>
       <ul className={` nav-links ${showLinks ? "show-nav" : "hide-nav"}`}>
         <li className="nav-option">
           <Link to="/">Home</Link>
@@ -29,7 +31,7 @@ function Nav() {
           <Link to="/#weeks-specials-title">Menu</Link>
         </li>
         <li className="nav-option">
-          <Link to="/reserve-a-table">Reservations</Link>
+          <Link to="/booking">Reservations</Link>
         </li>
         <li className="nav-option">
           <Link to="/#highlight-selections">Order Online</Link>

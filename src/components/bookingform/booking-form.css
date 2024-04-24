@@ -1,11 +1,37 @@
+.booking-form-title {
+  color: var(--little-lemon-yellow);
+  font-size: 40px;
+  font-weight: bold;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.form-img-container {
+  display: flex;
+}
+
+.presentation-images {
+  align-items: center;
+  background-color: var(--little-lemon-green);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.presentation-images img {
+  border-radius: 20px;
+  height: 300px;
+  margin: 40px 10px 10px;
+  width: 450px;
+}
+
 .booking-form {
   background-color: var(--little-lemon-green);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
   gap: 20px;
-  margin-top: -1px;
-  margin-bottom: 30px;
+  margin-top: -2px;
 }
 
 label {
@@ -85,17 +111,38 @@ select {
   margin-top: 5px;
 }
 
+@media screen and (min-width: 900px) and (max-width: 1023px) {
+  .main {
+    margin: 0 0 60px;
+  }
+
+  .presentation-images img {
+    height: 300px;
+    width: 400px;
+  }
+}
+
 @media screen and (min-width: 721px) and (max-width: 899px) {
   .booking-form {
     gap: 10px;
     padding: 20px 0;
+  }
+
+  .presentation-images img {
+    height: 250px;
+    width: 300px;
   }
 }
 
 @media screen and (max-width: 720px) {
   .booking-form {
     gap: 10px;
-    margin: -1px 0 20px;
+    margin: -1px 0 0;
+  }
+
+  .presentation-images img {
+    height: 120px;
+    width: 150px;
   }
 
   .error-message {

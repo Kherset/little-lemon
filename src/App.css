@@ -189,29 +189,6 @@ button {
   align-items: center;
 }
 
-/* Booking page */
-
-.booking-form-title {
-  color: var(--little-lemon-yellow);
-  font-size: 40px;
-  font-weight: bold;
-  padding-top: 20px;
-  text-align: center;
-}
-.presentation-images {
-  align-items: center;
-  background-color: var(--little-lemon-green);
-  display: flex;
-  flex-direction: column;
-}
-
-.presentation-images img {
-  border-radius: 20px;
-  height: 300px;
-  margin: 40px 10px 10px;
-  width: 450px;
-}
-
 /* Responsive part */
 
 @media screen and (min-width: 900px) and (max-width: 1023px) {
