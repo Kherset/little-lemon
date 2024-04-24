@@ -208,6 +208,7 @@ function BookingForm(props) {
             type="submit"
             value="envoyer"
             className="submit-button"
+            aria-label="On Click"
             onClick={handleSubmit}
           />
         </div>

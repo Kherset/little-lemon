@@ -7,7 +7,9 @@ function Specializations() {
     <section className="specializations">
       <div className="specializations-header">
         <h2 className="weeks-specials-title">This Weeks Specials !</h2>
-        <button className="online-menu-button">Online Menu</button>
+        <button className="online-menu-button" aria-label="On Click">
+          Online Menu
+        </button>
       </div>
       <section className="highlight-selections" id="highlight-selections">
         {dishes.map((dish) => (

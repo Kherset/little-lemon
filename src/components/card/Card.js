@@ -15,7 +15,9 @@ function Card({ image, title, price, text }) {
           <p className="card-description">{text}</p>
         </div>
         <div className="card-button-container">
-          <button className="card-button">Order Now</button>
+          <button className="card-button" aria-label="On Click">
+            Order Now
+          </button>
         </div>
       </div>
     </article>

@@ -13,7 +13,9 @@ function Header() {
           recipes served with a modern twist
         </p>
         <Link to="/booking" aria-label="on Click">
-          <button className="header-button">Reserve a table</button>
+          <button className="header-button" aria-label="On Click">
+            Reserve a table
+          </button>
         </Link>
       </article>
       <figure className="header-container-image">
